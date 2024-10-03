@@ -1,6 +1,6 @@
 import os
 import logging
-import openai
+import whisper
 from pydub import AudioSegment
 import time
 
@@ -11,9 +11,6 @@ logger = logging.getLogger()
 # Constants and Global Variables
 TRANSCRIPTS_FOLDER = 'transcripts'
 os.makedirs(TRANSCRIPTS_FOLDER, exist_ok=True)
-
-# Initialize OpenAI client
-openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 def save_transcript_as_txt(transcript, filename):
     timestamp = time.strftime("%Y%m%d_%H%M%S")
@@ -29,6 +26,7 @@ def split_audio(file_path, chunk_length_ms=15000):
     return chunks
 
 def transcribe_file(file_path):
+    model = whisper.load_model("base")
     audio_chunks = split_audio(file_path)
     total_chunks = len(audio_chunks)
     transcript = ""
@@ -36,8 +34,7 @@ def transcribe_file(file_path):
     for i, chunk in enumerate(audio_chunks):
         chunk_file = f"{file_path}_chunk_{i}.wav"
         chunk.export(chunk_file, format="wav")
-        with open(chunk_file, "rb") as audio_file:
-            result = openai.Audio.transcribe("whisper-1", audio_file)
+        result = model.transcribe(chunk_file)
         chunk_transcript = result.get("text", "")
         transcript += chunk_transcript + "\n"
         elapsed_time = time.time() - start_time
