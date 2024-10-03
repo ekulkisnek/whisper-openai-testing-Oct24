@@ -43,6 +43,10 @@ def transcribe_file(file_path):
             transcript_file.write(chunk_transcript + "\n")
             transcript_file.flush()  # Ensure writing to disk
             
+            # Delete the chunk file after processing
+            os.remove(chunk_file)
+            logging.debug(f"Deleted chunk file: {chunk_file}")
+            
             elapsed_time = time.time() - start_time
             remaining_time = elapsed_time * (total_chunks - i - 1) / (i + 1)
             logging.debug(f"Chunk {i+1}/{total_chunks} transcribed. Transcript so far: {chunk_transcript}")
