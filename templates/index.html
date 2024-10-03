@@ -43,10 +43,12 @@
                     transcriptPre.textContent = data.transcript;
                     resultDiv.classList.remove('hidden');
                 } else {
-                    alert(`Error: ${data.error}`);
+                    transcriptPre.textContent = `Error: ${data.error}`;
+                    resultDiv.classList.remove('hidden');
                 }
             } catch (error) {
-                alert(`An error occurred: ${error.message}`);
+                transcriptPre.textContent = `An error occurred: ${error.message}`;
+                resultDiv.classList.remove('hidden');
             } finally {
                 progressDiv.classList.add('hidden');
             }
