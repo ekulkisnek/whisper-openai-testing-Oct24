@@ -1,0 +1,35 @@
+2024-10-03 17:55:39,347 INFO: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.196.190:5000
+2024-10-03 17:55:39,347 INFO: Press CTRL+C to quit
+2024-10-03 17:55:39,348 INFO:  * Restarting with stat
+2024-10-03 17:55:41,418 WARNING:  * Debugger is active!
+2024-10-03 17:55:41,419 INFO:  * Debugger PIN: 116-485-043
+2024-10-03 17:55:41,572 INFO: 172.31.196.190 - - [03/Oct/2024 17:55:41] "GET /?initialPath=/&id=:rg2: HTTP/1.1" 200 -
+2024-10-03 17:55:41,654 INFO: 172.31.196.190 - - [03/Oct/2024 17:55:41] "GET /static/styles.css HTTP/1.1" 304 -
+/home/runner/AudioTranscriberFlask/.pythonlibs/lib/python3.11/site-packages/whisper/__init__.py:150: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(fp, map_location=device)
+2024-10-03 17:56:10,628 DEBUG: subprocess.call(['ffmpeg', '-y', '-i', 'uploads/1-_grimhood_0.aac', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+/home/runner/AudioTranscriberFlask/.pythonlibs/lib/python3.11/site-packages/whisper/transcribe.py:126: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+2024-10-03 17:56:42,958 DEBUG: Chunk 1/329 transcribed. Transcript so far:  Okay, awesome. There we go. We got the recording block in the voice channel.
+Processing chunk 1/329 (10.01s elapsed, 3283.10s remaining)
+/home/runner/AudioTranscriberFlask/.pythonlibs/lib/python3.11/site-packages/whisper/transcribe.py:126: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+2024-10-03 17:56:45,283 DEBUG: Chunk 2/329 transcribed. Transcript so far:  Alright, I'll just start.
+Processing chunk 2/329 (12.34s elapsed, 2016.80s remaining)
+/home/runner/AudioTranscriberFlask/.pythonlibs/lib/python3.11/site-packages/whisper/transcribe.py:126: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+2024-10-03 17:56:49,940 DEBUG: Chunk 3/329 transcribed. Transcript so far:  talking, um, let me think. What have I been experimenting with lately? Um, it's been mostly.
+Processing chunk 3/329 (16.99s elapsed, 1846.46s remaining)
+/home/runner/AudioTranscriberFlask/.pythonlibs/lib/python3.11/site-packages/whisper/transcribe.py:126: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+2024-10-03 17:56:52,929 DEBUG: Chunk 4/329 transcribed. Transcript so far:  my usual routine in like just getting sun immediately the moment that I wake up and then in regards to herbs I've been really
+Processing chunk 4/329 (19.98s elapsed, 1623.41s remaining)
+/home/runner/AudioTranscriberFlask/.pythonlibs/lib/python3.11/site-packages/whisper/transcribe.py:126: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+2024-10-03 17:56:56,741 DEBUG: Chunk 5/329 transcribed. Transcript so far:  focusing on maximizing essentially mostly dopamine just so I can get as much work done throughout the day as possible because I've been working on getting a new
+Processing chunk 5/329 (23.79s elapsed, 1541.80s remaining)
+/home/runner/AudioTranscriberFlask/.pythonlibs/lib/python3.11/site-packages/whisper/transcribe.py:126: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")

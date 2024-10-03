@@ -3,6 +3,10 @@ import logging
 import whisper
 from pydub import AudioSegment
 import time
+import warnings
+
+warnings.filterwarnings("ignore", message="FP16 is not supported on CPU; using FP32 instead")
+warnings.filterwarnings("ignore", message="You are using `torch.load` with `weights_only=False`")
 
 # Logging Configuration
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s: %(message)s')
