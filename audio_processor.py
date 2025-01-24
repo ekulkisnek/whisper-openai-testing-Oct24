@@ -22,7 +22,7 @@ def split_audio(file_path, chunk_length_ms=15000):
     return chunks
 
 def transcribe_file(file_path):
-    model = whisper.load_model("tiny")  # Changed from "base" to "tiny"
+    model = whisper.load_model("base")  # Changed from "base" to "tiny"
     audio_chunks = split_audio(file_path)
     total_chunks = len(audio_chunks)
     
